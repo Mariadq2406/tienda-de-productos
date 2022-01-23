@@ -1,0 +1,60 @@
+<%- include('partials/_header'); -%>
+
+<!-- Form -->
+
+<div class="container">
+    <div class="row mt-3">
+
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Producto</h2>
+                    <form action="/agregar" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="producto" placeholder="Insertar producto" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="number" name="precio" placeholder="Insertar precio" class="form-control">
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea type="text" name="descripcion" placeholder="Insertar una descripción"
+                                class="form-control" cols="80"></textarea>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary btn-block">Agregar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table -->
+
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Descripción</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (var i = 0; i < products.length; i++) { %>
+                    <tr>
+                        <td><%= (i + 1) %></td>
+                        <td><%= products[i].producto%></td>
+                        <td><%= products[i].precio%></td>
+                        <td><%= products[i].descripcion%></td>
+                        <td>
+                            <a href="/edit/<%= products[i]._id%>" class="btn btn-success">Editar</a>
+                            <a href="/delete/<%= products[i]._id%>" class="btn btn-danger">Borrar</a>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+        <%- include('partials/_footer'); -%>
