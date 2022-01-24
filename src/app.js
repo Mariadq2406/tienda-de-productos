@@ -2,12 +2,14 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const app = express();
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+
+require('dotenv').config();
 
 //BB.DD
-mongoose.connect('mongodb://localhost/tienda-de-productos') 
-.then(db => console.log('base de datos')) 
-.catch(err => console.log(err));
+mongoose.connect(process.env.DB_URL)
+    .then(db => console.log('conectado a la base de datos'))
+    .catch(err => console.log(err));
 
 // importing routes
 const indexRoutes = require('./routes/index');
@@ -23,7 +25,7 @@ app.use(express.urlencoded({
     extended: false
 }));
 
-// routes
+//routes
 app.use('/', indexRoutes);
 
 //static files
