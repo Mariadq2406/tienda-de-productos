@@ -11,16 +11,16 @@
                     <form action="/agregar" method="POST">
                         <div class="form-group">
                             <label for="formGroupExampleInput">Nombre</label>
-                            <input type="text" name="producto" placeholder="Ingrese el nombre" class="form-control">
+                            <input type="text" name="producto" placeholder="Ingrese el nombre" class="form-control" Required>
                         </div>
                         <div class="form-group mt-3">
                             <label for="formGroupExampleInput">Precio</label>
-                            <input type="number" name="precio" placeholder="Ingrese el precio" class="form-control">
+                            <input type="number" name="precio" placeholder="0.01" class="form-control" step="0.01" Required>
                         </div>
                         <div class="form-group mt-3">
                             <label for="formGroupExampleInput">Descripción</label>
                             <textarea type="text" name="descripcion" placeholder="Ingrese una descripción"
-                                class="form-control" cols="80"></textarea>
+                                class="form-control" cols="80" Required></textarea>
                         </div>
                         <br>
                         <button type="submit" class="btn btn-primary col-12">Agregar</button>
