@@ -4,36 +4,38 @@
 
 <div class="container">
     <div class="row mt-3">
-
         <div class="col-md-5">
             <div class="card">
                 <div class="card-body">
-                    <h2>Producto</h2>
+                    <h3>Nuevo producto</h3>
                     <form action="/agregar" method="POST">
                         <div class="form-group">
-                            <input type="text" name="producto" placeholder="Insertar producto" class="form-control">
+                            <label for="formGroupExampleInput">Nombre</label>
+                            <input type="text" name="producto" placeholder="Ingrese el nombre" class="form-control">
                         </div>
                         <div class="form-group mt-3">
-                            <input type="number" name="precio" placeholder="Insertar precio" class="form-control">
+                            <label for="formGroupExampleInput">Precio</label>
+                            <input type="number" name="precio" placeholder="Ingrese el precio" class="form-control">
                         </div>
                         <div class="form-group mt-3">
-                            <textarea type="text" name="descripcion" placeholder="Insertar una descripción"
+                            <label for="formGroupExampleInput">Descripción</label>
+                            <textarea type="text" name="descripcion" placeholder="Ingrese una descripción"
                                 class="form-control" cols="80"></textarea>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-primary btn-block">Agregar</button>
+                        <button type="submit" class="btn btn-primary col-12">Agregar</button>
                     </form>
                 </div>
             </div>
         </div>
 
-        <!-- Table -->
+<!-- Table -->
 
         <div class="col-md-7">
             <table class="table table-bordered table-hover">
-                <thead>
+                <thead class="bg-light">
                     <tr>
-                        <th>N°</th>
+                        <th>#</th>
                         <th>Producto</th>
                         <th>Precio</th>
                         <th>Descripción</th>
@@ -48,7 +50,7 @@
                         <td><%= products[i].precio%></td>
                         <td><%= products[i].descripcion%></td>
                         <td>
-                            <a href="/edit/<%= products[i]._id%>" class="btn btn-success">Editar</a>
+                            <a href="/edit/<%= products[i]._id%>" class="btn btn-info">Editar</a>
                             <a href="/delete/<%= products[i]._id%>" class="btn btn-danger">Borrar</a>
                         </td>
                     </tr>

@@ -4,26 +4,28 @@
 
 <div class="container">
     <div class="row mt-3">
-
         <div class="col-md-5 offset-md-3">
             <div class="card">
                 <div class="card-body">
-                    <h2>Producto</h2>
+                    <h3>Editar producto</h3>
                     <form action="/edit/<%= product._id%>" method="POST">
+                        <label for="formGroupExampleInput">Nombre</label>
                         <div class="form-group">
                             <input type="text" name="producto" placeholder="Insertar producto" class="form-control"
                                 value="<%= product.producto%>">
                         </div>
                         <div class="form-group mt-3">
+                            <label for="formGroupExampleInput">Precio</label>
                             <input type="number" name="precio" placeholder="Insertar precio" class="form-control"
                                 value="<%= product.precio%>">
                         </div>
                         <div class="form-group mt-3">
+                            <label for="formGroupExampleInput">Descripción</label>
                             <textarea type="text" name="descripcion" placeholder="Insertar una descripción"
                                 value="<%= product.descripcion%>" class="form-control" cols="80"></textarea>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-primary btn-block">Editar</button>
+                        <button type="submit" class="btn btn-primary btn-block col-12">Editar</button>
                     </form>
                 </div>
             </div>
