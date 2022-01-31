@@ -11,10 +11,18 @@ router.get('/', async (req, res) => {
     });
 });
 
+router.get('/table', async (req, res) => {
+    const products = await Product.find();
+    console.log(products);
+    res.render('table', {
+        products
+    });
+});
+
 router.post('/agregar', async (req, res) => {
     const product = new Product(req.body);
     await product.save();
-    res.redirect('/');
+    res.redirect('/table');
 });
 
 router.get('/edit/:id', async (req, res) => {
@@ -32,7 +40,7 @@ router.post('/edit/:id', async (req, res) => {
         id
     } = req.params;
     await Product.update({_id:id}, req.body);
-    res.redirect('/');
+    res.redirect('/table');
 });
 
 router.get('/delete/:id', async (req, res) => {
@@ -42,7 +50,7 @@ router.get('/delete/:id', async (req, res) => {
     await Product.remove({
         _id: id
     });
-    res.redirect('/');
+    res.redirect('/table');
 });
 
 module.exports = router;
