@@ -1,0 +1,45 @@
+<%- include('partials/_header'); -%>
+
+<!-- Signup -->
+
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-5 offset-md-3">
+            <div class="card mt-4 mb-4">
+                <div class="card-body">
+                    <div class="card-header text-center">
+                        <h3>Registro de Usuario</h3>
+                    </div>
+                    <form action="/signup" method="POST">
+                        <div class="form-group mt-3">
+                            <label for="formGroupExampleInput">Nombre</label>
+                            <input type="text" name="nombre" class="form-control" Required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="formGroupExampleInput">Apellido</label>
+                            <input type="text" name="apellido" class="form-control" Required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="formGroupExampleInput">Teléfono</label>
+                            <input type="tel" name="telefono" placeholder="0000-0000000" pattern="[0-9]{4}[-][0-9]{7}"
+                                class="form-control" Required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="formGroupExampleInput">Correo Electrónico</label>
+                            <input type="email" name="email" class="form-control" Required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="formGroupExampleInput">Contraseña</label>
+                            <input type="password" name="password" class="form-control" Required>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary col-12">Registrar</button>
+                        <div class="text-center">
+                            <a href="/">¿Ya tienes una cuenta? ¡Incia sesión!</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <%- include('partials/_footer'); -%>

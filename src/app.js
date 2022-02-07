@@ -1,16 +1,21 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const passport = require('passport');
+const session = require('express-session')
+const flash = require('connect-flash')
 const app = express();
 const mongoose = require('mongoose');
 
+require('./passport/local-aut');
+
 require('dotenv').config();
 
-//BB.DD
+// BB.DD
 mongoose.connect(process.env.DB_URL)
     .then(db => console.log('conectado a la base de datos'))
     .catch(err => console.log(err));
-
+ 
 // importing routes
 const indexRoutes = require('./routes/index');
 
@@ -24,6 +29,22 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({
     extended: false
 }));
+app.use(session({
+    secret:'mysecretsession',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(flash())
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use ((req,res,next) => {
+app.locals.signupMessage = req.flash('signupMessage');
+app.locals.signinMessage = req.flash('signinMessage');
+console.log(app.locals);
+app.locals.user = req.user;
+next();
+});
 
 //routes
 app.use('/', indexRoutes);

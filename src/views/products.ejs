@@ -1,6 +1,6 @@
 <%- include('partials/_header'); -%>
 
-<!-- Form edit -->
+<!-- Form -->
 
 <div class="container">
     <div class="row mt-3">
@@ -8,38 +8,36 @@
             <div class="card mt-4 mb-4">
                 <div class="card-body">
                     <div class="card-header text-center">
-                        <h3>Editar Producto</h3>
+                        <h3>Nuevo Producto</h3>
                     </div>
-                    <form action="/edit/<%= product._id%>" method="POST">
-                        <label for="formGroupExampleInput">Nombre</label>
+                    <form action="/agregar" method="POST">
                         <div class="form-group mt-3">
-                            <input type="text" name="producto" class="form-control" value="<%= product.producto%>"
-                                Required>
+                            <label for="formGroupExampleInput">Nombre</label>
+                            <input type="text" name="producto" class="form-control" Required>
                         </div>
                         <div class="form-group mt-3">
                             <label for="formGroupExampleInput">Código</label>
-                            <input type="number" name="codigo" class="form-control" value="<%= product.codigo%>"
-                                Required>
+                            <input type="number" name="codigo" class="form-control" Required>
                         </div>
                         <div class="form-group mt-3">
                             <label for="formGroupExampleInput">Precio</label>
-                            <input type="number" name="precio" placeholder="0.01" class="form-control"
-                                value="<%= product.precio%>" step="0.01" Required>
+                            <input type="number" name="precio" placeholder="0.01" class="form-control" step="0.01"
+                                Required>
                         </div>
                         <div class="form-group mt-3">
                             <label for="formGroupExampleInput">Fecha</label>
-                            <input type="date" name="fecha" value="<%= product.fecha%>" class="form-control" Required>
+                            <input type="date" name="fecha" class="form-control" Required>
                         </div>
                         <div class="form-group mt-3">
                             <label for="formGroupExampleInput">Descripción</label>
-                            <textarea type="text" name="descripcion" value="<%= product.descripcion%>"
-                                class="form-control" rows="3" Required></textarea>
+                            <textarea type="text" name="descripcion" class="form-control" rows="3" Required></textarea>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-primary btn-block col-12">Editar</button>
+                        <button type="submit" class="btn btn-primary col-12">Agregar +</button>
                     </form>
                 </div>
             </div>
         </div>
+
 
         <%- include('partials/_footer'); -%>

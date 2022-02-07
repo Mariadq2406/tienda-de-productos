@@ -1,36 +1,33 @@
 <%- include('partials/_header'); -%>
 
-<!-- Form -->
+<!-- Signin -->
 
 <div class="container">
     <div class="row mt-3">
         <div class="col-md-5 offset-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3>Nuevo producto</h3>
-                    <form action="/agregar" method="POST">
-                        <div class="form-group">
-                            <label for="formGroupExampleInput">Nombre</label>
-                            <input type="text" name="producto" placeholder="Ingrese el nombre" class="form-control" Required>
+            <div class="card mt-4 mb-4">
+                <div class="card-body"> 
+                    <div class="card-header text-center">
+                        <h3>Iniciar Sesión</h3>
+                    </div>
+                    <form action="/" method="POST">
+                        <div class="form-group mt-3">
+                            <label for="formGroupExampleInput">Correo Electrónico</label>
+                            <input type="text" name="email" class="form-control" Required>
                         </div>
                         <div class="form-group mt-3">
-                            <label for="formGroupExampleInput">Precio</label>
-                            <input type="number" name="precio" placeholder="0.01" class="form-control" step="0.01" Required>
-                        </div>
-                        <div class="form-group mt-3">
-                            <label for="formGroupExampleInput">Fecha</label>
-                            <input type="date" name="fecha" placeholder="fecha" class="form-control" Required>
-                        </div>
-                        <div class="form-group mt-3">
-                            <label for="formGroupExampleInput">Descripción</label>
-                            <textarea type="text" name="descripcion" placeholder="Ingrese una descripción"
-                                class="form-control" rows="3" Required></textarea>
+                            <label for="formGroupExampleInput">Contraseña</label>
+                            <input type="password" name="password" class="form-control" Required>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-primary col-12">Agregar</button>
+                        <button type="submit" class="btn btn-primary col-12">Ingresar</button>
+                        <div class="text-center">
+                            <a href="/signup">¿No tienes una cuenta? ¡Registrate ya!</a>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
 
-<%- include('partials/_footer'); -%>
+
+        <%- include('partials/_footer'); -%>

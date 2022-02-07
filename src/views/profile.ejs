@@ -1,14 +1,22 @@
 <%- include('partials/_header'); -%>
 
-<!-- Table -->
-
 <div class="container">
     <div class="row mt-3">
+        
+        <!-- Profile -->
+
+        <h1>Perfil de <%= user.nombre %> <%= user.apellido %></h1>
+        <p> Numero de Teléfono: <%= user.telefono %></p>
+        <p>Correo Electrónico: <%= user.email %></p>
+
+        <!-- Table -->
+
         <table class="table table-bordered table-hover">
-            <thead class="bg-light">
+            <thead class="table-primary">
                 <tr>
                     <th>#</th>
                     <th>Producto</th>
+                    <th>Código</th>
                     <th>Precio</th>
                     <th>Fecha</th>
                     <th>Descripción</th>
@@ -20,6 +28,7 @@
                 <tr>
                     <td><%= (i + 1) %></td>
                     <td><%= products[i].producto%></td>
+                    <td><%= products[i].codigo%></td>
                     <td><%= products[i].precio%></td>
                     <td><%= products[i].fecha%></td>
                     <td><%= products[i].descripcion%></td>
@@ -31,7 +40,7 @@
                 <% } %>
             </tbody>
         </table>
-            </div>
-        </div>
+    </div>
+</div>
 
 <%- include('partials/_footer'); -%>
