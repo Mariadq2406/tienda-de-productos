@@ -14,7 +14,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/profile"> <img src="/img/carrito.png" alt= width="30" height="30"
+      <a class="navbar-brand" href="/profile"> <img src="/img/carrito.png" alt=width="30" height="30"
           class="d-inline-block align-text-top"> Mi Tienda | By mariadq</a>
       <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <% if (user) { %>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link active" href="/profile">Perfil<span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
@@ -33,11 +33,11 @@
             <a class="nav-link" href="/logout">Salir<span class="sr-only"></span></a>
           </li>
           <% } else { %>
-          <li class="nav-item active">
-            <a class="nav-link" href="/signup">Registrarse<span class="sr-only"></span></a>
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Inicio<span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/">Inicio<span class="sr-only"></span></a>
+            <a class="nav-link" href="/signup">Registrarse<span class="sr-only"></span></a>
           </li>
           <% } %>
         </ul>
