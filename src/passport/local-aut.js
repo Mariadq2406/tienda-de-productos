@@ -20,7 +20,7 @@ passport.use('local-signup', new LocalStrategy ({
 
     const user = await User.findOne({email:email});
     if(user){
-        return done(null, false, req.flash('signupMessage','Este correo electrónico ya esta en uso.'));
+        return done(null, false, req.flash('signupMessage','Este correo electrónico ya esta en uso'));
     } else {
         const newUser = new User();
         newUser.nombre = req.param('nombre');

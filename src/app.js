@@ -15,7 +15,7 @@ require('dotenv').config();
 mongoose.connect(process.env.DB_URL)
     .then(db => console.log('conectado a la base de datos'))
     .catch(err => console.log(err));
- 
+    
 // importing routes
 const indexRoutes = require('./routes/index');
 

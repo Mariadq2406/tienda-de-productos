@@ -2,44 +2,57 @@
 
 <div class="container">
     <div class="row mt-3">
-        
+
         <!-- Profile -->
 
-        <h1>Perfil de <%= user.nombre %> <%= user.apellido %></h1>
-        <p> Numero de Teléfono: <%= user.telefono %></p>
-        <p>Correo Electrónico: <%= user.email %></p>
+        <div class="mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-header">
+                        <h3 class="card-title">Perfil de <%= user.nombre %> <%= user.apellido %></h3>
+                    </div>
+                    <p class="card-text mt-2"> Numero de Teléfono: <%= user.telefono %></p>
+                    <p class="card-text mt-2">Correo Electrónico: <%= user.email %></p>
+                    <a href="/products" class="btn btn-secondary">Nuevo Producto +</a>
+                </div>
+            </div>
+        </div>
 
         <!-- Table -->
 
-        <table class="table table-bordered table-hover">
-            <thead class="table-primary">
-                <tr>
-                    <th>#</th>
-                    <th>Producto</th>
-                    <th>Código</th>
-                    <th>Precio</th>
-                    <th>Fecha</th>
-                    <th>Descripción</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for (var i = 0; i < products.length; i++) { %>
-                <tr>
-                    <td><%= (i + 1) %></td>
-                    <td><%= products[i].producto%></td>
-                    <td><%= products[i].codigo%></td>
-                    <td><%= products[i].precio%></td>
-                    <td><%= products[i].fecha%></td>
-                    <td><%= products[i].descripcion%></td>
-                    <td>
-                        <a href="/edit/<%= products[i]._id%>" class="btn btn-info">Editar</a>
-                        <a href="/delete/<%= products[i]._id%>" class="btn btn-danger">Borrar</a>
-                    </td>
-                </tr>
-                <% } %>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover mb-4">
+                <thead class="table-primary">
+                    <tr>
+                        <th>#</th>
+                        <th>Producto</th>
+                        <th>Código</th>
+                        <th>Precio</th>
+                        <th>Fecha_de_Ingreso</th>
+                        <th>Descripción</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (var i = 0; i < products.length; i++) { %>
+                    <tr>
+                        <td><%= (i + 1) %></td>
+                        <td><%= products[i].producto%></td>
+                        <td><%= products[i].codigo%></td>
+                        <td><%= products[i].precio%></td>
+                        <td><%= products[i].fecha%></td>
+                        <td><%= products[i].descripcion%></td>
+                        <td>
+                            <a href="/edit/<%= products[i]._id%>" class="btn btn-info">Editar <img src="/img/editar.png"
+                                    alt=width="15" height="15"> </a>
+                            <a href="/delete/<%= products[i]._id%>" class="btn btn-danger">Borrar <img
+                                    src="/img/borrar.png" alt=width="15" height="15"> </a>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
